@@ -11,6 +11,11 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        lapis: "#05668D",
+        teal: "#028090",
+        persianGreen: "#00A896",
+        mint: "#02C39A",
+        cream: "#F0F3BD",
       },
     },
   },
