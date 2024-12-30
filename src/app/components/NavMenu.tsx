@@ -31,16 +31,15 @@ const NavMenu: React.FC = () => {
 
   return (
     <div className="w-auto flex flex-row gap-4 hover:cursor-pointer">
-      <div
-        ref={rfRef}
-        className={`relative group transition-transform duration-500 ease-in-out ${
-          isNear ? "scale-105 bg-blue-200 shadow-lg" : ""
-        }`}
-      >
-        <p className="border-2 p-3 font-extrabold tracking-widest text-4xl text-lapis border-teal bg-white overflow-hidden relative">
+      <div ref={rfRef}>
+        <p
+          className={`border-2 p-3 font-extrabold tracking-widest text-4xl transition-transform duration-500 ease-in-out text-lapis border-teal bg-white overflow-hidden relative ${
+            isNear ? "scale-110 shadow-lg" : ""
+          }`}
+        >
           <span
             className={`absolute inset-0 bg-slate-200 ${
-              isNear ? "translate-x-0" : "-translate-x-20"
+              isNear ? "translate-x-0" : "-translate-x-32"
             } group-hover:translate-y-0 transition-transform duration-500 ease-in-out`}
           ></span>
           <span className="relative z-10">RF</span>
@@ -49,12 +48,12 @@ const NavMenu: React.FC = () => {
       <div className="relative">
         <p
           onClick={() => console.log("clicked")}
-          className={`m-auto pt-4 text-lapis transition-all text-2xl duration-500 ease-in-out`}
+          className={`m-auto pt-4 text-lapis transition-all text-2xl duration-500 ease-in-out hover:text-slate-500`}
         >
           Menu
         </p>
         <span
-          className={`absolute left-0 bottom-3 h-1 bg-slate-200 transition-all duration-1000 ease-in-out ${
+          className={`absolute left-0 bottom-6 h-1 bg-slate-200 transition-all duration-1000 ease-in-out ${
             isNear ? "w-full" : "w-0"
           }`}
         ></span>
