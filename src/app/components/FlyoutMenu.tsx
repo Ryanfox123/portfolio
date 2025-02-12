@@ -3,9 +3,11 @@ import { motion } from "framer-motion";
 
 interface FlyoutMenuProps {
   setIsHovered: React.Dispatch<React.SetStateAction<boolean>>;
+  setCurrentSeg: React.Dispatch<React.SetStateAction<number>>;
 }
 
 function FlyoutMenu({ setIsHovered }: FlyoutMenuProps) {
+  const [currentSeg, setCurrentSeg] = useState(null);
   return (
     <motion.div
       initial={{ x: -100, opacity: 0 }}
@@ -24,9 +26,19 @@ function FlyoutMenu({ setIsHovered }: FlyoutMenuProps) {
             transition={{ delay: index * 0.2, duration: 0.5 }}
             className="relative group text-lg text-lapis font-medium cursor-pointer"
           >
-            {item}
+            <p
+              onClick={() => {
+                setCurrentSeg(index);
+              }}
+            >
+              {item}
+            </p>
             {index !== 4 && (
-              <span className="block h-0.5 bg-teal w-10 mt-2 transition-all duration-500 group-hover:w-full"></span>
+              <span
+                className={`block h-0.5 bg-teal ${
+                  currentSeg === index ? "w-full" : "w-10"
+                } mt-2 transition-all duration-500 group-hover:w-full`}
+              ></span>
             )}
           </motion.li>
         ))}
