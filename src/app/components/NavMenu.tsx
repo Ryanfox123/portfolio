@@ -1,9 +1,12 @@
 "use client";
 import React, { useRef, useState, useEffect } from "react";
+import FlyoutMenu from "./FlyoutMenu";
 
 const NavMenu: React.FC = () => {
   const rfRef = useRef<HTMLDivElement | null>(null);
   const [isNear, setIsNear] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -18,6 +21,7 @@ const NavMenu: React.FC = () => {
         );
 
         const threshold = 175;
+
         setIsNear(distance < threshold);
       }
     };
@@ -30,31 +34,47 @@ const NavMenu: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-auto flex flex-row gap-4 hover:cursor-pointer">
-      <div ref={rfRef}>
+    <div className="fixed w-auto flex flex-row gap-4 hover:cursor-pointer">
+      <div
+        ref={rfRef}
+        onClick={() => {
+          setIsClicked(!isClicked);
+        }}
+      >
         <p
           className={`border-2 p-3 font-extrabold tracking-widest text-4xl transition-transform duration-500 ease-in-out text-lapis border-teal bg-white overflow-hidden relative ${
-            isNear ? "scale-105 shadow-lg" : ""
+            isNear || isClicked || isHovered ? "scale-105 shadow-lg" : ""
           }`}
         >
           <span
             className={`absolute inset-0 bg-slate-200 ${
-              isNear ? "translate-x-0" : "-translate-x-20"
+              isNear || isClicked || isHovered
+                ? "translate-x-0"
+                : "-translate-x-20"
             } group-hover:translate-y-0 transition-transform duration-500 ease-in-out`}
           ></span>
           <span className="relative z-10">RF</span>
         </p>
       </div>
-      <div className="relative">
+      <div
+        className="relative"
+        onClick={() => {
+          setIsClicked(!isClicked);
+        }}
+      >
         <p
-          onClick={() => console.log("clicked")}
           className={`m-auto pt-4 text-lapis transition-all text-2xl duration-500 ease-in-out`}
         >
           Menu
         </p>
+        {isNear || isClicked || isHovered ? (
+          <div className="fixed top-32 left-7">
+            <FlyoutMenu setIsHovered={setIsHovered} />
+          </div>
+        ) : null}
         <span
-          className={`absolute left-0 bottom-3 h-1 bg-slate-200 transition-all duration-1000 ease-in-out ${
-            isNear ? "w-full" : "w-0"
+          className={`absolute left-0 bottom-3 h-1 bg-slate-200 transition-all duration-500 ease-in-out ${
+            isNear || isClicked || isHovered ? "w-full" : "w-0"
           }`}
         ></span>
       </div>

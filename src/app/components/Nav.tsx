@@ -5,8 +5,8 @@ import NavLinks from "./NavLinks";
 function Nav() {
   return (
     <div>
-      <div className="flex-row flex justify-between">
-        <NavMenu />
+      <NavMenu />
+      <div className="flex-row flex justify-end">
         <NavLinks />
       </div>
       <hr className="mt-3 h-px border-slate-200"></hr>

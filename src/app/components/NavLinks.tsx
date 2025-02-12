@@ -5,7 +5,7 @@ import LIicon from "../../../public/linkedin.png";
 
 function NavLinks() {
   return (
-    <div className="flex flex-row h-12 mt-3">
+    <div className=" flex flex-row h-12 mt-3">
       <div className="flex flex-col">
         <a
           href="https://github.com/ryanfox123"
