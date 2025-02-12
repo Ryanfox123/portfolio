@@ -3,11 +3,10 @@ import { motion } from "framer-motion";
 
 interface FlyoutMenuProps {
   setIsHovered: React.Dispatch<React.SetStateAction<boolean>>;
-  setCurrentSeg: React.Dispatch<React.SetStateAction<number>>;
 }
 
 function FlyoutMenu({ setIsHovered }: FlyoutMenuProps) {
-  const [currentSeg, setCurrentSeg] = useState(null);
+  const [currentSeg, setCurrentSeg] = useState<number | null>(null);
   return (
     <motion.div
       initial={{ x: -100, opacity: 0 }}
