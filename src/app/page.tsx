@@ -1,3 +1,4 @@
+import AboutMe from "./components/AboutMe";
 import Nav from "./components/Nav";
 import { Kanit } from "next/font/google";
 
@@ -11,6 +12,7 @@ export default function Home() {
   return (
     <div className={kanit.className}>
       <Nav />
+      <AboutMe />
     </div>
   );
 }
