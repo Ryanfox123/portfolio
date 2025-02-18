@@ -20,7 +20,6 @@ function NavLinks() {
                 whileHover="hover"
                 whileTap="hover"
               >
-                {/* Background Animation (Expands from Bottom) */}
                 <motion.div
                   initial={{ height: "20%" }}
                   variants={{ hover: { height: "100%" } }}
@@ -28,7 +27,6 @@ function NavLinks() {
                   className="absolute bottom-0 left-0 w-full bg-teal opacity-30 group-hover:opacity-60 pointer-events-none"
                 />
 
-                {/* Text */}
                 <motion.li className="relative z-10 text-lg text-black font-bold tracking-wider">
                   {item}
                 </motion.li>
@@ -38,7 +36,6 @@ function NavLinks() {
         </ul>
       </div>
 
-      {/* Social Links */}
       <div className="flex flex-row">
         <a
           href="https://github.com/ryanfox123"
