@@ -8,22 +8,26 @@ function Nav() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 200) {
-        setShowNav(true);
-      } else {
-        setShowNav(false);
-      }
+      const shouldShowNav = window.scrollY > 60;
+      setShowNav((prevShowNav) => {
+        if (prevShowNav !== shouldShowNav) {
+          return shouldShowNav;
+        }
+        return prevShowNav;
+      });
     };
 
     window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
-    <div>
-      <div>{showNav ? <NavMenu /> : <NavLinks />}</div>
-      <hr className="mt-3 h-px border-slate-200"></hr>
+    <div className="w-11/12 m-auto">
+      {showNav ? <NavMenu /> : <NavLinks />}
+      <hr className="mt-3 h-px border-slate-200" />
     </div>
   );
 }

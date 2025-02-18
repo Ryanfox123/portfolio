@@ -18,7 +18,7 @@ function FlyoutMenu({ setIsHovered }: FlyoutMenuProps) {
       onMouseLeave={() => setIsHovered(false)}
     >
       <ul className="flex flex-col gap-4">
-        {["About Me", "Projects", "Experience", "Links"].map((item, index) => (
+        {["Projects", "About Me", "Links"].map((item, index) => (
           <motion.li
             key={index}
             initial={{ x: -50, opacity: 0 }}
