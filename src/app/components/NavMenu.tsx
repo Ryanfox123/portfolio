@@ -69,7 +69,7 @@ const NavMenu: React.FC = () => {
             background:
               "linear-gradient(to left, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 1) 80%)",
           }}
-          className={`pl-4 pt-4 mt-[2px] w-60 text-lapis transition-all text-2xl duration-500 ease-in-out h-[65px] bg-white relative
+          className={`pl-4 pt-4 mt-[2px] w-60 text-lapis transition-all text-2xl duration-500 ease-in-out h-[65px] relative
             ${isHovered || isClicked || isNear ? "text-teal scale-105" : ""}
           `}
         >

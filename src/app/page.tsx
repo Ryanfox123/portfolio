@@ -11,7 +11,7 @@ const kanit = Kanit({
 
 export default function Home() {
   return (
-    <div className={`${kanit.className}`}>
+    <div className={`${kanit.className} `}>
       <Nav />
       <AboutMe />
       <Projects />
