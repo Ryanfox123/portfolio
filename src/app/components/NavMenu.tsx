@@ -34,7 +34,7 @@ const NavMenu: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed w-auto flex flex-row gap-4 hover:cursor-pointer">
+    <div className="fixed w-64 h-18 flex flex-row gap-3 hover:cursor-pointer">
       <div
         ref={rfRef}
         onClick={() => {
@@ -61,22 +61,30 @@ const NavMenu: React.FC = () => {
         onClick={() => {
           setIsClicked(!isClicked);
         }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
       >
         <p
-          className={`m-auto pt-4 text-lapis transition-all text-2xl duration-500 ease-in-out`}
+          style={{
+            background:
+              "linear-gradient(to left, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 1) 80%)",
+          }}
+          className={`pl-4 pt-4 mt-[2px] w-60 text-lapis transition-all text-2xl duration-500 ease-in-out h-[65px] bg-white relative
+            ${isHovered || isClicked || isNear ? "text-teal scale-105" : ""}
+          `}
         >
           Menu
+          <span
+            className={`absolute left-4 bottom-2 h-[2px] bg-teal transition-all duration-500 ease-in-out ${
+              isHovered || isClicked ? "w-20 opacity-100" : "w-0 opacity-0"
+            }`}
+          ></span>
         </p>
         {isNear || isClicked || isHovered ? (
           <div className="fixed top-32 left-7">
             <FlyoutMenu setIsHovered={setIsHovered} />
           </div>
         ) : null}
-        <span
-          className={`absolute left-0 bottom-3 h-1 bg-slate-200 transition-all duration-500 ease-in-out ${
-            isNear || isClicked || isHovered ? "w-full" : "w-0"
-          }`}
-        ></span>
       </div>
     </div>
   );
