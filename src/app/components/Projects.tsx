@@ -3,7 +3,7 @@ import Slider from "./Slider";
 
 function Projects() {
   return (
-    <div className="bg-teal mt-32 h-max overflow-auto">
+    <div className="bg-teal mt-32 h-full overflow-auto">
       <h3 className="text-white m-auto w-max font-bold text-3xl mt-8 underline">
         My Projects
       </h3>
