@@ -40,6 +40,7 @@ function Slider() {
             clickNext={clickNext}
             clickPrev={clickPrev}
             activeImgIndex={activeImage}
+            urls={project.urls}
           />
         </div>
       ))}
