@@ -65,18 +65,14 @@ const NavMenu: React.FC = () => {
         onMouseLeave={() => setIsHovered(false)}
       >
         <p
-          style={{
-            background:
-              "linear-gradient(to left, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 1) 80%)",
-          }}
-          className={`pl-4 pt-4 mt-[2px] w-60 text-lapis transition-all text-2xl duration-500 ease-in-out h-[65px] relative
+          className={`pl-4 pt-4 mt-[2px] mx-auto w-24 bg-white text-lapis transition-all text-2xl duration-500 ease-in-out h-[65px] relative
             ${isHovered || isClicked || isNear ? "text-teal scale-105" : ""}
           `}
         >
           Menu
           <span
-            className={`absolute left-4 bottom-2 h-[2px] bg-teal transition-all duration-500 ease-in-out ${
-              isHovered || isClicked ? "w-20 opacity-100" : "w-0 opacity-0"
+            className={`absolute left-3 bottom-2 h-[2px] bg-teal transition-all duration-500 ease-in-out ${
+              isHovered || isClicked ? "w-[70px] opacity-100" : "w-0 opacity-0"
             }`}
           ></span>
         </p>

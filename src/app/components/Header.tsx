@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const Portrait = "/me.png";
 
-function AboutMe() {
+function Header() {
   return (
     <div className="mt-32">
       <motion.div
@@ -54,4 +54,4 @@ function AboutMe() {
   );
 }
 
-export default AboutMe;
+export default Header;
