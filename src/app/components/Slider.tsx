@@ -33,7 +33,7 @@ function Slider() {
             src={project.src}
             height={300}
             width={300}
-            alt="project pic"
+            alt={project.alt}
             className="rounded-l-lg object-fill h-[500px] w-[250px]"
           />
           <Description

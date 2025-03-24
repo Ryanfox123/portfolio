@@ -1,13 +1,14 @@
 import React from "react";
+import Carousel from "./Carousel";
 
 function AboutMe() {
   return (
-    <div className="h-full mt-20">
-      <h3 className="text-teal m-auto w-max font-bold text-3xl mt-8 underline">
-        About Me
-      </h3>
-      <div className="flex flex-row">
-        <div className="bg-persianGreen w-2/5 mx-auto mt-14 p-4">
+    <div className="h-full mt-10 mx-auto w-4/5">
+      <div className="flex flex-row justify-evenly mx-auto">
+        <div className="bg-persianGreen w-2/5 mx-auto mt-14 p-4 rounded-lg">
+          <h3 className="text-white m-auto w-max font-bold text-3xl mb-8 underline">
+            About Me
+          </h3>
           <p className="text-black whitespace-pre-wrap text-center">
             Greetings! Im a Software Developer with a big passion for learning
             and progressing my skills. Here is a little bit about me and my
@@ -53,7 +54,7 @@ function AboutMe() {
             and have a great day :){" "}
           </p>
         </div>
-        <div> Image here</div>
+        <Carousel />
       </div>
     </div>
   );
