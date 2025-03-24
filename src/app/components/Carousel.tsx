@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { image } from "framer-motion/client";
 
 const images = [
   { src: "/ncgroup.png", alt: "Northcoders group picture" },
