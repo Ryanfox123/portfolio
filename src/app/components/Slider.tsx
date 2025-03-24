@@ -8,12 +8,12 @@ function Slider() {
   const [activeImage, setActiveImage] = useState(0);
 
   const clickNext = () => {
-    activeImage === projects.length - 1
+    return activeImage === projects.length - 1
       ? setActiveImage(0)
       : setActiveImage(activeImage + 1);
   };
   const clickPrev = () => {
-    activeImage === 0
+    return activeImage === 0
       ? setActiveImage(projects.length - 1)
       : setActiveImage(activeImage - 1);
   };
