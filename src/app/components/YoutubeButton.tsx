@@ -8,23 +8,27 @@ type Props = {
 
 function YoutubeButton({ url }: Props) {
   return (
-    <div className="bg-white w-40 h-10 rounded-2xl shadow-lg">
+    <div>
       <Link
         href={url}
         className="flex flex-row w-full mx-auto"
         rel="noopener noreferrer"
         target="_blank"
       >
-        <Image
-          src="/playbutton.png"
-          height={30}
-          width={30}
-          alt="youtube link"
-          className="mx-auto w-12"
-        />
-        <p className="m-auto pt-2 h-10 text-center text-white bg-red-600 w-full text-sm rounded-r-2xl">
-          View on Youtube
-        </p>
+        <div className="w-10 rounded-l-2xl shadow-lg h-10 bg-white">
+          <Image
+            src="/playbutton.png"
+            height={30}
+            width={30}
+            alt="youtube link"
+            className="mx-auto w-12"
+          />
+        </div>
+        <div className="w-36 rounded-r-2xl shadow-lg h-10 bg-red-600">
+          <p className="m-auto pt-2 h-10 text-center text-white w-full text-sm">
+            View on Youtube
+          </p>
+        </div>
       </Link>
     </div>
   );

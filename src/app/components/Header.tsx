@@ -47,8 +47,8 @@ function Header() {
         }}
         className="m-auto w-2/3 font-bold text-3xl text-center mt-5"
       >
-        Hey, I&ampos;m <span className="text-teal">Ryan Fox.</span> Here you can
-        check out all things related to me and my programming journey!
+        Hey, Im <span className="text-teal">Ryan Fox.</span> Here you can check
+        out all things related to me and my programming journey!
       </motion.h2>
     </div>
   );
