@@ -1,9 +1,10 @@
 declare module "vanta/dist/vanta.net.min" {
   import { Base } from "vanta/types/base";
+  import * as THREE from "three";
 
   interface VantaNetOptions {
     el: HTMLElement;
-    THREE?: any;
+    THREE?: typeof THREE;
     mouseControls?: boolean;
     touchControls?: boolean;
     gyroControls?: boolean;

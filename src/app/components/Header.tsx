@@ -46,7 +46,7 @@ function Header() {
           ease: "easeOut",
           delay: 0.8,
         }}
-        className="m-auto w-2/3 font-bold text-xl text-center mt-5 relative z-10" // Ensure heading is in front with `z-10`
+        className="m-auto w-2/3 font-bold text-xl text-center mt-5 relative z-10"
       >
         Hey, Im <span className="text-teal">Ryan Fox.</span> Here you can check
         out all things related to me and my programming journey!
