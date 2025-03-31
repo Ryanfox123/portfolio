@@ -1,8 +1,8 @@
 import Header from "./components/Header";
-import Nav from "./components/Nav";
 import { Kanit } from "next/font/google";
 import Projects from "./components/Projects";
 import AboutMe from "./components/AboutMe";
+import Nav from "./components/Nav";
 
 const kanit = Kanit({
   subsets: ["latin"],
@@ -12,9 +12,9 @@ const kanit = Kanit({
 
 export default function Home() {
   return (
-    <div className={`${kanit.className} `}>
-      <Nav />
+    <div className={`${kanit.className} overflow-visible`}>
       <Header />
+      <Nav />
       <Projects />
       <AboutMe />
     </div>

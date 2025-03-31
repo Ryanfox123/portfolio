@@ -6,7 +6,7 @@ function AboutMe() {
     <div className="h-full mt-10 mx-auto w-4/5">
       <div className="flex flex-row justify-evenly mx-auto">
         <div className="bg-persianGreen w-2/5 mx-auto mt-14 p-4 rounded-lg">
-          <h3 className="text-white m-auto w-max font-bold text-3xl mb-8 underline">
+          <h3 className="text-white m-auto w-max font-bold text-xl mb-8 underline">
             About Me
           </h3>
           <p className="text-black whitespace-pre-wrap text-center">
