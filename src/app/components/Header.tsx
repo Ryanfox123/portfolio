@@ -48,7 +48,7 @@ function Header() {
         }}
         className="m-auto w-2/3 font-bold text-xl text-center mt-5 relative z-10" // Ensure heading is in front with `z-10`
       >
-        Hey, I'm <span className="text-teal">Ryan Fox.</span> Here you can check
+        Hey, Im <span className="text-teal">Ryan Fox.</span> Here you can check
         out all things related to me and my programming journey!
       </motion.h2>
     </div>

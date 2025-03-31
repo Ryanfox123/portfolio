@@ -1,11 +1,15 @@
-"use client"; // Ensure this runs only on the client-side
+"use client";
 import { useEffect, useRef, useState } from "react";
-import * as THREE from "three"; // Import THREE.js to pass to Vanta
-import NET from "vanta/dist/vanta.net.min"; // Import the NET effect from Vanta
+import * as THREE from "three";
+import NET from "vanta/dist/vanta.net.min";
+
+interface VantaEffect {
+  destroy: () => void;
+}
 
 export default function VantaBackground() {
   const vantaRef = useRef<HTMLDivElement>(null);
-  const [vantaEffect, setVantaEffect] = useState<any>(null);
+  const [vantaEffect, setVantaEffect] = useState<VantaEffect | null>(null);
 
   useEffect(() => {
     if (!vantaEffect && vantaRef.current) {
