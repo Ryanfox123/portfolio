@@ -1,6 +1,17 @@
 export const projects = [
   {
     id: 1,
+    src: "/gather.PNG",
+    title: "Gather",
+    alt: "Gather screenshot",
+    desc: "A full-stack web application built with Next.js, MongoDB, and Google OAuth. This project allows users to browse and sign up for future events then add them to their Google calendar.",
+    urls: {
+      githubsrc: "https://github.com/Ryanfox123/gather",
+      livesrc: "https://gather-lime.vercel.app/login",
+    },
+  },
+  {
+    id: 2,
     src: "/pix-pursuit.PNG",
     title: "Pix Pursuit",
     alt: "pix-pursuit project screenshot",
@@ -12,7 +23,7 @@ export const projects = [
     },
   },
   {
-    id: 2,
+    id: 3,
     src: "/news.PNG",
     title: "NC News",
     alt: "NC News project screenshot",

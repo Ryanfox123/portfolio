@@ -33,7 +33,6 @@ export default function RootLayout({
           strategy="beforeInteractive"
         />
         {children}
-        {children}
       </body>
     </html>
   );
