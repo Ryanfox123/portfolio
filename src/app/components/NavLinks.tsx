@@ -6,8 +6,20 @@ export default function NavLinks() {
     <div className="flex flex-row h-12  justify-between">
       <div>
         <ul className="flex flex-row gap-20">
-          {["Projects", "About Me", "Links"].map((item, index) => (
-            <li key={index}>
+          {[
+            { name: "Projects", yLocation: 650 },
+            { name: "About Me", yLocation: 1400 },
+            { name: "Links", yLocation: 2000 },
+          ].map((item, index) => (
+            <li
+              key={index}
+              onClick={() => {
+                scrollTo({
+                  top: item.yLocation,
+                  behavior: "smooth",
+                });
+              }}
+            >
               <motion.div
                 initial={{ opacity: 0, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -24,7 +36,7 @@ export default function NavLinks() {
                 />
 
                 <motion.div className="relative z-10 text-lg text-black font-medium tracking-wider">
-                  {item}
+                  {item.name}
                 </motion.div>
               </motion.div>
             </li>
