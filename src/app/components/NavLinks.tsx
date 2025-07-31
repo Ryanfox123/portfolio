@@ -41,16 +41,21 @@ export default function NavLinks() {
                 whileTap="hover"
               >
                 <motion.div
-                  initial={{ height: "20%" }}
-                  variants={{ hover: { height: "40%" } }}
+                  initial="initial"
                   animate={
                     scrollY >= item.yLocationStart &&
                     scrollY <= item.yLocationEnd
-                      ? { height: "40%", opacity: 0.6 }
-                      : { height: "20%" }
+                      ? "active"
+                      : "initial"
                   }
+                  whileHover="hover"
+                  variants={{
+                    initial: { height: "20%", opacity: 0.3 },
+                    hover: { height: "40%", opacity: 0.6 },
+                    active: { height: "40%", opacity: 0.6 },
+                  }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
-                  className="absolute bottom-3 left-0 w-full bg-teal opacity-30 group-hover:opacity-60 pointer-events-none"
+                  className="absolute bottom-3 left-0 w-full bg-teal pointer-events-none"
                 />
 
                 <motion.div className="relative z-10 text-lg text-black font-medium tracking-wider">
