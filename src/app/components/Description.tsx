@@ -38,16 +38,10 @@ const Description = ({ clickNext, clickPrev, activeImgIndex, urls }: Props) => {
       </motion.div>
       <div className="flex gap-7 flex-col">
         <motion.div className="flex flex-row gap-6 w-max mx-auto">
-          {urls.githubsrc && (
-            <GithubButton url="https://github.com/Ryanfox123/Pix-Pursuit" />
-          )}
-          {urls.livesrc && (
-            <LiveButton url="https://ryans-nc-news.netlify.app/" />
-          )}
+          {urls.githubsrc && <GithubButton url={urls.githubsrc} />}
+          {urls.livesrc && <LiveButton url={urls.livesrc} />}
 
-          {urls.youtubesrc && (
-            <YoutubeButton url="https://www.youtube.com/watch?v=uooW3U5M-v4&ab_channel=Northcoders" />
-          )}
+          {urls.youtubesrc && <YoutubeButton url={urls.youtubesrc} />}
         </motion.div>
         <div className="mx-auto w-max flex gap-4">
           <motion.button
