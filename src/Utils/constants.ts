@@ -1,7 +1,7 @@
 export const projects = [
   {
     id: 1,
-    src: "/gather.PNG",
+    src: "/gather.png",
     title: "Gather",
     alt: "Gather screenshot",
     desc: "A full-stack web application built with Next.js, MongoDB, and Google OAuth. This project allows users to browse and sign up for future events then add them to their Google calendar.",
