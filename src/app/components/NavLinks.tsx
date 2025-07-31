@@ -47,7 +47,7 @@ export default function NavLinks() {
                     scrollY >= item.yLocationStart &&
                     scrollY <= item.yLocationEnd
                       ? { height: "40%", opacity: 0.6 }
-                      : { height: "20%", opacity: 0.3 }
+                      : { height: "20%" }
                   }
                   transition={{ duration: 0.3, ease: "easeOut" }}
                   className="absolute bottom-3 left-0 w-full bg-teal opacity-30 group-hover:opacity-60 pointer-events-none"
