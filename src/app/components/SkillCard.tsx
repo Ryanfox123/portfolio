@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import SkillDescription from "./SkillDesc";
-import { Skill } from "../../Utils/skillsData";
+import { Skill } from "../../Utils/skillData";
 
 interface SkillCardProps {
   skill: Skill;
@@ -19,6 +19,7 @@ const SkillCard: React.FC<SkillCardProps> = ({
   onClick,
 }) => {
   const isSelected = selectedSkill === skill.name;
+  const Icon = skill.icon;
 
   return (
     <div className="flex flex-col items-center">
@@ -41,7 +42,7 @@ const SkillCard: React.FC<SkillCardProps> = ({
           }}
           transition={{ type: "spring", stiffness: 300 }}
         >
-          {skill.icon}
+          <Icon className="text-blue-500" />
         </motion.div>
         <span className="text-sm font-semibold text-gray-800 text-center">
           {skill.name}

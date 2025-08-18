@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import SkillCard from "./SkillCard";
-import { skillsData } from "../../Utils/skillsData";
+import { skillData as skillsData } from "../../Utils/skillData";
 
 const SkillsSection: React.FC = () => {
   const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
