@@ -3,58 +3,62 @@ import Carousel from "./Carousel";
 
 function AboutMe() {
   return (
-    <div className="h-full mt-10 mx-auto w-4/5">
-      <div className="flex flex-row justify-evenly mx-auto">
-        <div className="bg-persianGreen w-2/5 mx-auto mt-14 p-4 rounded-lg">
-          <h3 className="text-white m-auto w-max font-bold text-xl mb-8 underline">
+    <div className="h-full mt-16 mx-auto w-4/5 bg-white">
+      <div className="flex flex-col lg:flex-row justify-between items-start gap-10">
+        <div className="bg-persianGreen flex-1 p-6 rounded-2xl shadow-2xl text-white">
+          <h3 className="text-2xl font-extrabold mb-6 text-center underline">
             About Me
           </h3>
-          <p className="text-black whitespace-pre-wrap text-center">
-            Greetings! Im a Software Developer with a big passion for learning
-            and progressing my skills. Here is a little bit about me and my
-            current journey.
-          </p>
-          <br />
-          <p className="text-black whitespace-pre-wrap text-center">
-            Initially I began my journey as a self-learning hobbyist, dipping my
-            toes into free online courses and simple youtube guides. At the time
-            I was a Air-conditioning engineer working on building sites full
-            time who picked this up out of curiosity. Most of my time during the
-            first 6 months were spent building a strong foundation on JS, HTML,
-            CSS and other technologies such as Express and React. This helped me
-            create some of my first small scale apps including a URL shortener
-            and a note creater. It was during this period I realised I wanted to
-            take programming further than a hobby.
-          </p>
-          <br />
-          <p className="text-black whitespace-pre-wrap text-center">
-            The next stage of my journey would include me leaving my old career
-            to enroll in a fullstack JavaScript bootcamp at Northcoders. I put
-            down the tools and bought a new laptop to look the part! This was an
-            amazing step in my pathway to become a professional developer as I
-            would be introduced to some crucial concepts, such as pair
-            programming and AGILE methodologies. Of course I also refined my
-            JavaScript skills greatly and learned how to incorporate things like
-            TDD into my workflow. After meeting some amazing fellow students and
-            mentors, I realised this career was the perfect path for me.
-          </p>
-          <br />
-          <p className="text-black whitespace-pre-wrap text-center">
-            This brings me here, now! Equipped with the professional help of my
-            former mentors and a hunger to improve, my goal is to land my first
-            developer role. Aside from looking for suitable roles for me, my
-            immediate plans are to continue exercising and expanding my skillset
-            to become the best version of myself. I will continue creating
-            interesting personal projects that you can find here or on my
-            github.
-          </p>
-          <br />
-          <p className="text-black whitespace-pre-wrap text-center">
-            I appreciate anyone who happens to still be reading this, thank you
-            and have a great day :){" "}
-          </p>
+
+          <div className="space-y-6 leading-relaxed text-lg">
+            <p>
+              Hey, I’m a{" "}
+              <span className="font-semibold">Software Developer</span> who
+              loves learning new things and building cool projects. Here’s a bit
+              about how I got here.
+            </p>
+
+            <p>
+              I first got into coding as a hobby while I was working as an
+              <span className="font-semibold"> air-conditioning engineer</span>.
+              In the evenings I’d mess around with free online courses and
+              YouTube tutorials, slowly getting the hang of{" "}
+              <span className="italic">JavaScript, HTML, CSS</span>, and
+              eventually
+              <span className="italic"> Express</span> and{" "}
+              <span className="italic">React</span>. My first little apps were a
+              URL shortener and a note maker — nothing fancy, but they lit the
+              spark for me.
+            </p>
+
+            <p>
+              After a while, I knew I wanted to take it further, so I left my
+              old job and joined the{" "}
+              <span className="font-semibold">
+                Northcoders Fullstack Bootcamp
+              </span>
+              . That’s where I really started to level up — learning things like
+              pair programming, AGILE, and test-driven development. I also met a
+              bunch of brilliant people who made the whole experience even
+              better.
+            </p>
+
+            <p>
+              Now I’m focused on landing my first developer role. While I apply
+              for jobs, I’m keeping my skills sharp by building personal
+              projects (you can find some here or on my GitHub). I’m excited to
+              keep improving and see where this path takes me.
+            </p>
+
+            <p className="italic text-center">
+              Thanks for taking the time to read this — really appreciate it! 🙏
+            </p>
+          </div>
         </div>
-        <Carousel />
+
+        <div className="flex-1">
+          <Carousel />
+        </div>
       </div>
     </div>
   );

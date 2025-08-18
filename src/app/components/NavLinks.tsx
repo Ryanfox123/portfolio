@@ -13,12 +13,18 @@ const navItems = [
     name: "About Me",
     snapLocation: 1400,
     yLocationStart: 950,
-    yLocationEnd: 1999,
+    yLocationEnd: 1799,
+  },
+  {
+    name: "Skills",
+    snapLocation: 2000,
+    yLocationStart: 1800,
+    yLocationEnd: 2199,
   },
   {
     name: "Links",
-    snapLocation: 2000,
-    yLocationStart: 2000,
+    snapLocation: 2200,
+    yLocationStart: 2200,
     yLocationEnd: 2500,
   },
 ];

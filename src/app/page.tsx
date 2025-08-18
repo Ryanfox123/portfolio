@@ -3,6 +3,8 @@ import { Kanit } from "next/font/google";
 import Projects from "./components/Projects";
 import AboutMe from "./components/AboutMe";
 import Nav from "./components/Nav";
+import Links from "./components/Links";
+import Skills from "./components/Skills";
 
 const kanit = Kanit({
   subsets: ["latin"],
@@ -17,6 +19,8 @@ export default function Home() {
       <Nav />
       <Projects />
       <AboutMe />
+      <Skills />
+      <Links />
     </div>
   );
 }

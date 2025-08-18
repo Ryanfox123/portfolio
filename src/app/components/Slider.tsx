@@ -31,10 +31,10 @@ function Slider() {
         >
           <Image
             src={project.src}
-            height={300}
-            width={300}
             alt={project.alt}
-            className="rounded-l-lg object-fill h-[500px] w-[250px]"
+            width={250}
+            height={500}
+            className="rounded-l-lg object-cover h-[500px] w-[300px]"
           />
           <Description
             clickNext={clickNext}

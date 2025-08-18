@@ -20,14 +20,30 @@ function Carousel() {
   }, []);
 
   return (
-    <div className="w-2/5 h-[800px] relative overflow-hidden my-auto">
-      <Image
-        src={images[currImageIndex].src}
-        alt={images[currImageIndex].alt}
-        layout="fill"
-        objectFit="cover"
-        className="rounded-lg transition-opacity duration-500"
-      />
+    <div className="relative lg:w-5/5 h-[400px] sm:h-[500px] lg:h-[725px] overflow-hidden rounded-2xl shadow-2xl">
+      {images.map((image, idx) => (
+        <Image
+          key={idx}
+          src={image.src}
+          alt={image.alt}
+          fill
+          className={`object-cover rounded-2xl absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+            idx === currImageIndex ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      ))}
+
+      <div className="absolute bottom-4 w-full flex justify-center gap-2">
+        {images.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => setCurrImageIndex(idx)}
+            className={`w-3 h-3 rounded-full transition-all ${
+              idx === currImageIndex ? "bg-white scale-110" : "bg-gray-400"
+            }`}
+          />
+        ))}
+      </div>
     </div>
   );
 }
