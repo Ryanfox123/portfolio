@@ -33,16 +33,12 @@ const SkillCard: React.FC<SkillCardProps> = ({
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
         <motion.div
-          className="text-5xl mb-2"
-          animate={{
-            rotate: isSelected ? (index % 2 === 0 ? -15 : 15) : 0,
-          }}
-          whileHover={{
-            rotate: index % 2 === 0 ? -10 : 10,
-          }}
+          className="mb-2"
+          animate={{ rotate: isSelected ? (index % 2 === 0 ? -15 : 15) : 0 }}
+          whileHover={{ rotate: index % 2 === 0 ? -10 : 10 }}
           transition={{ type: "spring", stiffness: 300 }}
         >
-          <Icon className="text-blue-500" />
+          <Icon style={{ color: skill.color }} size={40} />
         </motion.div>
         <span className="text-sm font-semibold text-gray-800 text-center">
           {skill.name}
