@@ -20,30 +20,31 @@ type Props = {
 
 const Description = ({ clickNext, clickPrev, activeImgIndex, urls }: Props) => {
   return (
-    <div className="bg-gray-700 w-[900px] rounded-r-lg flex flex-col justify-between shadow-lg p-6">
+    <div className="bg-gray-700 w-full max-w-3xl rounded-r-lg flex flex-col justify-between shadow-lg p-6">
       <motion.div
         key={activeImgIndex}
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -20 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="flex flex-col gap-16 mt-8"
+        className="flex flex-col gap-6 md:gap-12 mt-4 text-center"
       >
-        <h3 className="w-max mx-auto text-white text-4xl">
+        <h3 className="mx-auto text-white text-2xl md:text-4xl font-semibold">
           {projects[activeImgIndex].title}
         </h3>
-        <p className="text-white text-center">
+        <p className="text-white text-sm md:text-base">
           {projects[activeImgIndex].desc}
         </p>
       </motion.div>
-      <div className="flex gap-7 flex-col">
-        <motion.div className="flex flex-row gap-6 w-max mx-auto">
+
+      <div className="flex flex-col gap-6 mt-8">
+        <motion.div className="flex flex-wrap justify-center gap-4">
           {urls.githubsrc && <GithubButton url={urls.githubsrc} />}
           {urls.livesrc && <LiveButton url={urls.livesrc} />}
-
           {urls.youtubesrc && <YoutubeButton url={urls.youtubesrc} />}
         </motion.div>
-        <div className="mx-auto w-max flex gap-4">
+
+        <div className="flex justify-center gap-6">
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -51,9 +52,10 @@ const Description = ({ clickNext, clickPrev, activeImgIndex, urls }: Props) => {
           >
             <Image
               src="./left.svg"
-              width={50}
-              height={50}
+              width={40}
+              height={40}
               alt="click previous"
+              className="w-8 md:w-10"
             />
           </motion.button>
           <motion.button
@@ -61,7 +63,13 @@ const Description = ({ clickNext, clickPrev, activeImgIndex, urls }: Props) => {
             whileTap={{ scale: 0.9 }}
             onClick={clickNext}
           >
-            <Image src="./right.svg" width={50} height={50} alt="click next" />
+            <Image
+              src="./right.svg"
+              width={40}
+              height={40}
+              alt="click next"
+              className="w-8 md:w-10"
+            />
           </motion.button>
         </div>
       </div>

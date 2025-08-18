@@ -1,6 +1,8 @@
+"use client";
+
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
+import { AiFillYoutube } from "react-icons/ai";
 
 type Props = {
   url: string;
@@ -8,26 +10,18 @@ type Props = {
 
 function YoutubeButton({ url }: Props) {
   return (
-    <div>
+    <div className="w-40 h-10 rounded-2xl shadow-lg">
       <Link
         href={url}
         className="flex flex-row w-full mx-auto"
         rel="noopener noreferrer"
         target="_blank"
       >
-        <div className="w-10 rounded-l-2xl shadow-lg h-10 bg-white">
-          <Image
-            src="/playbutton.png"
-            height={30}
-            width={30}
-            alt="youtube link"
-            className="mx-auto w-12"
-          />
+        <div className="w-10 h-10 bg-white rounded-l-2xl flex items-center justify-center shadow-lg">
+          <AiFillYoutube size={30} className="text-red-600" />
         </div>
-        <div className="w-36 rounded-r-2xl shadow-lg h-10 bg-red-600">
-          <p className="m-auto pt-2 h-10 text-center text-white w-full text-sm">
-            View on Youtube
-          </p>
+        <div className="w-36 h-10 bg-red-600 rounded-r-2xl flex items-center justify-center shadow-lg">
+          <p className="text-sm text-white text-center">View on YouTube</p>
         </div>
       </Link>
     </div>

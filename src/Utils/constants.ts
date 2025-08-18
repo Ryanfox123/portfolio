@@ -31,7 +31,7 @@ export const projects = [
   },
   {
     id: 3,
-    src: "/news.PNG",
+    src: "/news.png",
     title: "NC News",
     alt: "NC News project screenshot",
     desc: `My first full stack application. Designed to mimic a reddit style news 

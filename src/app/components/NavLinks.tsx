@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { FiMenu, FiX } from "react-icons/fi";
 
 const navItems = [
   {
@@ -19,13 +20,13 @@ const navItems = [
     name: "Skills",
     snapLocation: 2000,
     yLocationStart: 1800,
-    yLocationEnd: 2199,
+    yLocationEnd: 2299,
   },
   {
     name: "Links",
-    snapLocation: 2200,
-    yLocationStart: 2200,
-    yLocationEnd: 2500,
+    snapLocation: 3000,
+    yLocationStart: 2300,
+    yLocationEnd: 3000,
   },
 ];
 
@@ -83,6 +84,7 @@ function NavLinkItem({ item, scrollY }: { item: Item; scrollY: number }) {
 
 export default function NavLinks() {
   const [scrollY, setScrollY] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -92,12 +94,35 @@ export default function NavLinks() {
   }, []);
 
   return (
-    <div className="flex flex-row h-12 justify-between">
-      <ul className="flex flex-row gap-20">
+    <div className="flex items-center justify-between w-full">
+      <ul className="hidden md:flex flex-row gap-12">
         {navItems.map((item, index) => (
           <NavLinkItem key={index} item={item} scrollY={scrollY} />
         ))}
       </ul>
+
+      <div className="md:hidden">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="text-2xl text-black"
+        >
+          {isOpen ? <FiX /> : <FiMenu />}
+        </button>
+
+        {isOpen && (
+          <motion.ul
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+            className="absolute top-14 right-4 bg-white shadow-lg rounded-lg p-4 flex flex-col space-y-4 z-50"
+          >
+            {navItems.map((item, index) => (
+              <NavLinkItem key={index} item={item} scrollY={scrollY} />
+            ))}
+          </motion.ul>
+        )}
+      </div>
     </div>
   );
 }

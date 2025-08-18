@@ -4,7 +4,7 @@ import Projects from "./components/Projects";
 import AboutMe from "./components/AboutMe";
 import Nav from "./components/Nav";
 import Links from "./components/Links";
-import Skills from "./components/Skills";
+import SkillsSection from "./components/SkillsSection";
 
 const kanit = Kanit({
   subsets: ["latin"],
@@ -19,7 +19,7 @@ export default function Home() {
       <Nav />
       <Projects />
       <AboutMe />
-      <Skills />
+      <SkillsSection />
       <Links />
     </div>
   );

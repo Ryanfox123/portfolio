@@ -8,40 +8,41 @@ function Slider() {
   const [activeImage, setActiveImage] = useState(0);
 
   const clickNext = () => {
-    return activeImage === projects.length - 1
-      ? setActiveImage(0)
-      : setActiveImage(activeImage + 1);
+    setActiveImage((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
   };
+
   const clickPrev = () => {
-    return activeImage === 0
-      ? setActiveImage(projects.length - 1)
-      : setActiveImage(activeImage - 1);
+    setActiveImage((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
   };
 
   return (
-    <div className="w-3/5 m-auto my-6 gap-4 flex flex-col ">
+    <div className="w-full max-w-5xl mx-auto my-6 px-4">
       {projects.map((project, id) => (
         <div
           key={id}
           className={
             id === activeImage
-              ? `flex flex-row bg-white rounded-lg shadow-lg`
+              ? "flex flex-col md:flex-row bg-white rounded-lg shadow-lg overflow-hidden"
               : "hidden"
           }
         >
-          <Image
-            src={project.src}
-            alt={project.alt}
-            width={250}
-            height={500}
-            className="rounded-l-lg object-cover h-[500px] w-[300px]"
-          />
-          <Description
-            clickNext={clickNext}
-            clickPrev={clickPrev}
-            activeImgIndex={activeImage}
-            urls={project.urls}
-          />
+          <div className="flex-shrink-0 w-full md:w-[300px] h-[300px] md:h-[500px] relative">
+            <Image
+              src={project.src}
+              alt={project.alt}
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          <div className="flex-1">
+            <Description
+              clickNext={clickNext}
+              clickPrev={clickPrev}
+              activeImgIndex={activeImage}
+              urls={project.urls}
+            />
+          </div>
         </div>
       ))}
     </div>
