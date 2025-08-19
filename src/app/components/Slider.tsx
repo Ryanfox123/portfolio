@@ -16,17 +16,17 @@ function Slider() {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto my-6 px-4">
+    <div className="w-full max-w-5xl mx-auto my-6 px-4 ">
       {projects.map((project, id) => (
         <div
           key={id}
           className={
             id === activeImage
-              ? "flex flex-col md:flex-row bg-white rounded-lg shadow-lg overflow-hidden"
+              ? "flex flex-col md:flex-row bg-white rounded-lg shadow-lg overflow-hidden md:h-[500px]"
               : "hidden"
           }
         >
-          <div className="flex-shrink-0 w-full md:w-[300px] h-[300px] md:h-[500px] relative">
+          <div className="flex-shrink-0 w-full md:w-[300px] h-[300px] md:h-full relative">
             <Image
               src={project.src}
               alt={project.alt}
@@ -35,7 +35,7 @@ function Slider() {
             />
           </div>
 
-          <div className="flex-1">
+          <div className="flex-1 h-auto md:h-full">
             <Description
               clickNext={clickNext}
               clickPrev={clickPrev}

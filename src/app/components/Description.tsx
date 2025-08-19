@@ -20,7 +20,7 @@ type Props = {
 
 const Description = ({ clickNext, clickPrev, activeImgIndex, urls }: Props) => {
   return (
-    <div className="bg-gray-700 w-full max-w-3xl rounded-r-lg flex flex-col justify-between shadow-lg p-6">
+    <div className="bg-gray-700 w-full max-w-3xl h-full flex flex-col justify-between rounded-r-lg shadow-lg p-6">
       <motion.div
         key={activeImgIndex}
         initial={{ opacity: 0, x: 20 }}
